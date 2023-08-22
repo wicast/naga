@@ -300,6 +300,10 @@ impl<'a> TypedGlobalVariable<'a> {
     }
 }
 
+trait ArgumentBufferFormat {}
+
+impl<'a> ArgumentBufferFormat for &[TypedGlobalVariable<'a>] {}
+
 pub struct Writer<W> {
     out: W,
     names: FastHashMap<NameKey, String>,
